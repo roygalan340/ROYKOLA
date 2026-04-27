@@ -221,6 +221,7 @@ line-height:45px;
 
 <script>
 let cola = JSON.parse(localStorage.getItem("cola")) || [];
+let creditos = 3;
 
 function guardarCola(){
 localStorage.setItem("cola", JSON.stringify(cola));
@@ -228,6 +229,8 @@ mostrarCola();
 }
 
 function agregarCancion(){
+let id="";
+  
 let nombre=document.getElementById("nombre").value;
 let cancion=document.getElementById("cancion").value;
 
