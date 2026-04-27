@@ -209,10 +209,14 @@ line-height:45px;
 <input type="text" id="cancion" placeholder="Pega link de YouTube">
 <button onclick="agregarCancion()">Agregar y reproducir</button>
 
-<iframe id="player" allow="autoplay"></iframe>
+<iframe id="player" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <h2 style="margin-top:20px;">Lista</h2>
 <div id="cola"></div>
+
+<h2 style="margin-top:20px;">Métodos de pago</h2>
+<p>Escanea para pagar</p>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PagoRoykola" width="100%">
 </div>
 
 <footer>
@@ -229,19 +233,26 @@ mostrarCola();
 }
 
 function agregarCancion(){
-let id="";
-  
 let nombre=document.getElementById("nombre").value;
 let cancion=document.getElementById("cancion").value;
+
+if(creditos <= 0){
+alert("Sin créditos. Realiza un pago.");
+return;
+}
 
 if(nombre===""||cancion===""){
 alert("Completa los datos");
 return;
 }
 
+creditos--;
+
 cola.push({nombre,cancion});
 guardarCola();
 reproducir(cancion);
+
+alert("Te quedan " + creditos + " créditos");
 
 document.getElementById("nombre").value="";
 document.getElementById("cancion").value="";
@@ -257,7 +268,7 @@ id = link.split("youtu.be/")[1].split("?")[0];
 }
 
 document.getElementById("player").src =
-"https://www.youtube.com/embed/"+id+"?autoplay=1";
+"https://www.youtube.com/embed/"+id+"?autoplay=1&mute=1";
 }
 
 function mostrarCola(){
