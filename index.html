@@ -4,17 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ROYKOLA DIGITAL</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{
-background:#000;
-color:#fff;
-}
+body{background:#000;color:#fff;}
 
-/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -25,31 +20,28 @@ position:sticky;
 top:0;
 z-index:999;
 }
+
 .logo{
 font-size:35px;
 font-weight:bold;
 color:red;
 }
+
 .logo span{
 display:block;
 font-size:12px;
-color:#fff;
 letter-spacing:4px;
+color:#fff;
 }
+
 nav a{
 color:#fff;
 text-decoration:none;
 margin:0 15px;
-font-size:14px;
-transition:.3s;
-}
-nav a:hover{
-color:red;
 }
 
-/* HERO */
 .hero{
-height:80vh;
+height:70vh;
 background:
 linear-gradient(to right,#000 20%,rgba(0,0,0,.4)),
 url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80') center/cover;
@@ -57,22 +49,19 @@ display:flex;
 align-items:center;
 padding:40px;
 }
-.hero-text{
-max-width:500px;
-}
+
 .hero-text h1{
 font-size:70px;
 line-height:70px;
-font-weight:bold;
 }
-.hero-text h1 span{
-color:red;
-}
+
+.hero-text span{color:red;}
+
 .hero-text p{
 margin:20px 0;
 font-size:20px;
-color:#ddd;
 }
+
 .btn{
 display:inline-block;
 padding:15px 25px;
@@ -82,48 +71,31 @@ text-decoration:none;
 border-radius:8px;
 font-weight:bold;
 }
-.btn:hover{
-background:#c70000;
-}
 
-/* SECTION */
-.section{
-padding:30px;
-}
-.section-title{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px;
-}
-.section-title a{
-color:red;
-text-decoration:none;
-}
+.section{padding:30px;}
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:15px;
 }
+
 .card{
 background:#111;
 border-radius:10px;
 overflow:hidden;
-transition:.3s;
-cursor:pointer;
 }
-.card:hover{
-transform:scale(1.05);
-}
+
 .card img{
 width:100%;
 height:180px;
 object-fit:cover;
 }
+
 .card p{
 padding:10px;
 }
 
-/* SIDEBAR */
 .sidebar{
 position:fixed;
 right:10px;
@@ -135,23 +107,7 @@ padding:20px;
 max-height:85vh;
 overflow:auto;
 }
-.sidebar h2{
-margin-bottom:15px;
-}
-.queue-item{
-display:flex;
-align-items:center;
-background:#222;
-padding:10px;
-border-radius:8px;
-margin-bottom:10px;
-}
-.queue-item img{
-width:55px;
-height:55px;
-border-radius:8px;
-margin-right:10px;
-}
+
 input{
 width:100%;
 padding:12px;
@@ -159,6 +115,7 @@ margin:5px 0;
 border:none;
 border-radius:8px;
 }
+
 button{
 width:100%;
 padding:12px;
@@ -168,26 +125,46 @@ border:none;
 border-radius:8px;
 font-weight:bold;
 cursor:pointer;
-}
-button:hover{
-background:#c70000;
+margin-top:5px;
 }
 
-/* FOOTER */
+.queue-item{
+display:flex;
+align-items:center;
+background:#222;
+padding:10px;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.queue-item img{
+width:55px;
+height:55px;
+border-radius:8px;
+margin-right:10px;
+}
+
+iframe{
+width:100%;
+height:200px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+}
+
 footer{
 text-align:center;
 padding:30px;
 color:#999;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
 .sidebar{
 position:relative;
 width:95%;
 margin:auto;
-right:0;
 top:0;
+right:0;
 }
 .hero-text h1{
 font-size:45px;
@@ -203,46 +180,25 @@ line-height:45px;
 <nav>
 <a href="#">INICIO</a>
 <a href="#">EXPLORAR</a>
-<a href="#">TOP 100</a>
-<a href="#">GÉNEROS</a>
+<a href="#">TOP</a>
 </nav>
 </header>
 
 <section class="hero">
 <div class="hero-text">
 <h1>PIDE TU <br><span>CANCIÓN</span></h1>
-<p>Elige tu canción favorita y disfrútala ahora.</p>
-<a href="#pedido" class="btn"><i class="fa-solid fa-music"></i> PEDIR CANCIÓN</a>
+<p>Prueba tu música ahora.</p>
+<a href="#pedido" class="btn">🎵 PEDIR</a>
 </div>
 </section>
 
 <section class="section">
-<div class="section-title">
 <h2>Categorías</h2>
-<a href="#">VER TODAS</a>
-</div>
-
 <div class="grid">
 <div class="card"><img src="https://picsum.photos/200/300?1"><p>Reggaetón</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?2"><p>Románticas</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?3"><p>Cumbia</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?4"><p>Rock</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?5"><p>Pop</p></div>
-</div>
-</section>
-
-<section class="section">
-<div class="section-title">
-<h2>Top 10 del momento</h2>
-<a href="#">VER TOP 100</a>
-</div>
-
-<div class="grid">
-<div class="card"><img src="https://picsum.photos/200/300?11"><p>Bad Bunny</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?12"><p>Karol G</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?13"><p>Feid</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?14"><p>Shakira</p></div>
-<div class="card"><img src="https://picsum.photos/200/300?15"><p>Manuel Turizo</p></div>
+<div class="card"><img src="https://picsum.photos/200/300?2"><p>Cumbia</p></div>
+<div class="card"><img src="https://picsum.photos/200/300?3"><p>Rock</p></div>
+<div class="card"><img src="https://picsum.photos/200/300?4"><p>Románticas</p></div>
 </div>
 </section>
 
@@ -250,17 +206,13 @@ line-height:45px;
 <h2>🎵 Cola de reproducción</h2>
 
 <input type="text" id="nombre" placeholder="Tu nombre">
-<input type="text" id="cancion" placeholder="Nombre o link">
-<button onclick="agregarCancion()">Agregar a la cola</button>
+<input type="text" id="cancion" placeholder="Pega link de YouTube">
+<button onclick="agregarCancion()">Agregar y reproducir</button>
+
+<iframe id="player" allow="autoplay"></iframe>
 
 <h2 style="margin-top:20px;">Lista</h2>
 <div id="cola"></div>
-
-<h2 style="margin-top:20px;">Métodos de pago</h2>
-<p>Escanea para pagar</p>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PagoRoykola" width="100%">
-<br><br>
-<a class="btn" href="https://wa.me/59100000000">WhatsApp</a>
 </div>
 
 <footer>
@@ -286,9 +238,23 @@ return;
 
 cola.push({nombre,cancion});
 guardarCola();
+reproducir(cancion);
 
 document.getElementById("nombre").value="";
 document.getElementById("cancion").value="";
+}
+
+function reproducir(link){
+let id="";
+
+if(link.includes("youtube.com/watch?v=")){
+id = link.split("v=")[1].split("&")[0];
+}else if(link.includes("youtu.be/")){
+id = link.split("youtu.be/")[1].split("?")[0];
+}
+
+document.getElementById("player").src =
+"https://www.youtube.com/embed/"+id+"?autoplay=1";
 }
 
 function mostrarCola(){
